@@ -16,7 +16,6 @@
       <button id="l">🔗</button>
       <button id="c">&lt;/&gt;</button>
       <button id="q">"</button>
-      <!-- <button id="image">🌠</button> -->
       <input id="image" type="file" accept="image/*" />
       <button id="ol">OL</button>
       <button id="ul">UL</button>
@@ -24,12 +23,8 @@
     <textarea style="width: 50dvw;height:50dvh"></textarea>
   </div>
 
-  <script src="./dist/md-textarea.umd.cjs"></script>
-  <script>
-    MdTextarea.init(document.getElementsByTagName('textarea')[0], { initialText: 'Blah' })
-  </script>
-
-  <!-- <script type="module">
+  <script src="@/index"></script>
+  <script type="module">
     import { init } from '@/index'
     import boldCommand from '@/commands/boldCommand'
     import italicCommand from '@/commands/italicCommand'
@@ -46,12 +41,9 @@
       return 'https://picsum.photos/200/300?name=' + file.name
     }
 
-    init({
-      targetEl: document.getElementsByTagName('textarea')[0],
+    init(document.getElementsByTagName('textarea')[0], {
       initialText: 'Start\n\n1. one\n2. two\n3. three\n\n- aaa\n- bbb\n- ccc\n\nHello World\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      options: {
-        uploadFile
-      }
+      uploadFile
     })
 
     const targetEl = document.getElementsByTagName('textarea')[0]
@@ -91,7 +83,7 @@
     image.addEventListener('change', (e) => {
       imageUploadCommand(targetEl, e)
     })
-  </script> -->
+  </script>
 </body>
 
 </html>
