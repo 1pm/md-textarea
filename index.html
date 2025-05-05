@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MD Textarea</title>
+</head>
+
+<body>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div>
+      <button id="b">B</button>
+      <button id="i">i</button>
+      <button id="h">H</button>
+      <button id="l">🔗</button>
+      <button id="c">&lt;/&gt;</button>
+      <button id="q">"</button>
+      <!-- <button id="image">🌠</button> -->
+      <input id="image" type="file" accept="image/*" />
+      <button id="ol">OL</button>
+      <button id="ul">UL</button>
+    </div>
+    <textarea style="width: 50dvw;height:50dvh"></textarea>
+  </div>
+
+  <script src="./dist/md-textarea.umd.cjs"></script>
+  <script>
+    MdTextarea.init(document.getElementsByTagName('textarea')[0], { initialText: 'Blah' })
+  </script>
+
+  <!-- <script type="module">
+    import { init } from '@/index'
+    import boldCommand from '@/commands/boldCommand'
+    import italicCommand from '@/commands/italicCommand'
+    import codeCommand from '@/commands/codeCommand'
+    import headingCommand from '@/commands/headingCommand'
+    import imageUploadCommand from '@/commands/imageUploadCommand'
+    import linkCommand from '@/commands/linkCommand'
+    import quoteCommand from '@/commands/quoteCommand'
+    import olCommand from '@/commands/olCommand'
+    import ulCommand from '@/commands/ulCommand'
+
+    async function uploadFile(file) {
+      await new Promise((resolve) => setTimeout(resolve, 5000))
+      return 'https://picsum.photos/200/300?name=' + file.name
+    }
+
+    init({
+      targetEl: document.getElementsByTagName('textarea')[0],
+      initialText: 'Start\n\n1. one\n2. two\n3. three\n\n- aaa\n- bbb\n- ccc\n\nHello World\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+      options: {
+        uploadFile
+      }
+    })
+
+    const targetEl = document.getElementsByTagName('textarea')[0]
+    const b = document.getElementById('b')
+    b.addEventListener('click', (e) => {
+      boldCommand(targetEl, e)
+    })
+    const i = document.getElementById('i')
+    i.addEventListener('click', (e) => {
+      italicCommand(targetEl, e)
+    })
+    const h = document.getElementById('h')
+    h.addEventListener('click', (e) => {
+      headingCommand(targetEl, e)
+    })
+    const l = document.getElementById('l')
+    l.addEventListener('click', (e) => {
+      linkCommand(targetEl, e)
+    })
+    const c = document.getElementById('c')
+    c.addEventListener('click', (e) => {
+      codeCommand(targetEl, e)
+    })
+    const q = document.getElementById('q')
+    q.addEventListener('click', (e) => {
+      quoteCommand(targetEl, e)
+    })
+    const olButton = document.getElementById('ol')
+    olButton.addEventListener('click', (e) => {
+      olCommand(targetEl, e)
+    })
+    const ulButton = document.getElementById('ul')
+    ulButton.addEventListener('click', (e) => {
+      ulCommand(targetEl, e)
+    })
+    const image = document.getElementById('image')
+    image.addEventListener('change', (e) => {
+      imageUploadCommand(targetEl, e)
+    })
+  </script> -->
+</body>
+
+</html>
